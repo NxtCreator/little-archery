@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bupr48wvnjsw5"]
 
 [ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bmkk87rby2yyn" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vdhe"]
 radius = 48.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1213636557]
 position = Vector2(549, 289)
+script = ExtResource("1_g2els")
 
 [node name="PlayerImg" type="Sprite2D" parent="." unique_id=2053514023]
 texture = ExtResource("1_3vyb7")
