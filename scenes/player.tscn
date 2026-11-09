@@ -6,6 +6,7 @@
 radius = 48.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1213636557]
+position = Vector2(549, 289)
 
 [node name="PlayerImg" type="Sprite2D" parent="." unique_id=2053514023]
 texture = ExtResource("1_3vyb7")
