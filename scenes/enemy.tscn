@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_62jd7"]
 radius = 48.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=283542043]
+[node name="Enemy" type="CharacterBody2D" unique_id=283542043 groups=["enemy"]]
 motion_mode = 1
 script = ExtResource("1_md0e3")
 
