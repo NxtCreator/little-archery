@@ -20,3 +20,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
+
+
+func _on_timer_timeout() -> void:
+	var arrow = preload("res://scenes/arrow.tscn").instantiate()
+	var parent = get_parent()
+	arrow.global_position = global_position
+	parent.add_child(arrow)
