@@ -7,7 +7,6 @@
 radius = 48.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1213636557 groups=["player"]]
-position = Vector2(549, 289)
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2053514023]
