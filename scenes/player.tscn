@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vdhe"]
 radius = 48.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1213636557]
+[node name="Player" type="CharacterBody2D" unique_id=1213636557 groups=["player"]]
 position = Vector2(549, 289)
 script = ExtResource("1_g2els")
 
