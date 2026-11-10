@@ -25,5 +25,11 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	var arrow = preload("res://scenes/arrow.tscn").instantiate()
 	var parent = get_parent()
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	
+	for enemy in enemies:
+		var distance = global_position.distance_to(enemy.global_position)
+		print(distance)
+		
 	arrow.global_position = global_position
 	parent.add_child(arrow)
