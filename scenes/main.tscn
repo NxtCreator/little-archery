@@ -9,4 +9,5 @@
 position = Vector2(530, 295)
 
 [node name="Enemy" parent="." unique_id=283542043 instance=ExtResource("2_0wfyh")]
-position = Vector2(152, 148)
+position = Vector2(115, 123)
+motion_mode = 1
