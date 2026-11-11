@@ -1,5 +1,11 @@
 extends CharacterBody2D
 @export var speed = 200
+@export var health = 3
+
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health == 0:
+		queue_free()
 
 func _ready() -> void:
 	pass
