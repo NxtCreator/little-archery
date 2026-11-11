@@ -52,4 +52,4 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		
 		if lives <= 0:
-			get_tree().reload_current_scene()
+			get_tree().reload_current_scene.call_deferred()
