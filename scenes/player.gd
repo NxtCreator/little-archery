@@ -50,4 +50,6 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
 		lives -= 1
 		body.queue_free()
-		print('Lives left: ', lives)
+		
+		if lives <= 0:
+			get_tree().reload_current_scene()
