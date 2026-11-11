@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @export var speed = 300
+@export var attack_range = 400
 var coin_count = 0
 
 func count_coins():
@@ -36,7 +37,7 @@ func _on_timer_timeout() -> void:
 	
 	for enemy in enemies:
 		var distance = global_position.distance_to(enemy.global_position)
-		if distance < closest_distance:
+		if distance < attack_range and distance < closest_distance:
 			closest_distance = distance
 			closest_enemy = enemy
 			
