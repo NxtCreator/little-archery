@@ -3,9 +3,15 @@ extends CharacterBody2D
 @export var health = 3
 
 func take_damage(amount: int) -> void:
+	var parent = get_parent()
+	var coin_pos = global_position
+
 	health -= amount
-	if health == 0:
+	if health <= 0:
+		var coin = preload("res://scenes/coin.tscn").instantiate()
 		queue_free()
+		parent.add_child(coin)
+		coin.global_position = coin_pos
 
 func _ready() -> void:
 	pass
