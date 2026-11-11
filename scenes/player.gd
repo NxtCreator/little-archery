@@ -2,6 +2,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var attack_range = 400
 var coin_count = 0
+var direction = Vector2.ZERO
 
 func count_coins():
 	coin_count += 1
@@ -14,14 +15,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector(
-		"move_left",
-		"move_right",
-		"move_up",
-		"move_down"
-	)
-	
+func _physics_process(_delta: float) -> void:
+	direction = Input.get_vector( "move_left", "move_right", "move_up", "move_down")
 	velocity = direction * speed
 	move_and_slide()
 	
@@ -29,7 +24,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var arrow = preload("res://scenes/arrow.tscn").instantiate()
+	if direction != Vector2.ZERO:
+		return
 	var parent = get_parent()
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	var closest_enemy = null
@@ -43,7 +39,7 @@ func _on_timer_timeout() -> void:
 			
 	if closest_enemy == null:
 		return	
-		
+	var arrow = preload("res://scenes/arrow.tscn").instantiate()
 	arrow.direction = global_position.direction_to(closest_enemy.global_position)
 	parent.add_child(arrow)
 	arrow.global_position = global_position
