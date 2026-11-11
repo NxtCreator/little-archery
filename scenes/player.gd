@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var speed = 300
 @export var attack_range = 400
-@export var lives = 3
+@export var lives = 1
 var coin_count = 0
 var direction = Vector2.ZERO
 
