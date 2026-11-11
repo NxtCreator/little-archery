@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vdhe"]
 radius = 48.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_62jd7"]
+radius = 50.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1213636557 groups=["player"]]
 script = ExtResource("1_g2els")
 
@@ -19,4 +22,11 @@ shape = SubResource("CircleShape2D_4vdhe")
 wait_time = 0.5
 autostart = true
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1975904231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1796695998]
+shape = SubResource("CircleShape2D_62jd7")
+debug_color = Color(0.83221674, 0.3788679, 0.27415457, 0.41960785)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

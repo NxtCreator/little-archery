@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var speed = 300
 @export var attack_range = 400
+@export var lives = 3
 var coin_count = 0
 var direction = Vector2.ZERO
 
@@ -43,3 +44,10 @@ func _on_timer_timeout() -> void:
 	arrow.direction = global_position.direction_to(closest_enemy.global_position)
 	parent.add_child(arrow)
 	arrow.global_position = global_position
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		lives -= 1
+		body.queue_free()
+		print('Lives left: ', lives)
