@@ -1,5 +1,10 @@
 extends CharacterBody2D
 @export var speed = 300
+var coin_count = 0
+
+func count_coins():
+	coin_count += 1
+	print(coin_count)
 
 
 # Called when the node enters the scene tree for the first time.
