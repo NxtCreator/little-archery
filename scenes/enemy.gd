@@ -10,8 +10,8 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		var coin = preload("res://scenes/coin.tscn").instantiate()
 		queue_free()
-		parent.add_child(coin)
-		coin.global_position = coin_pos
+		parent.add_child.call_deferred(coin)
+		coin.set_deferred("global_position", coin_pos)
 
 func _ready() -> void:
 	pass
