@@ -2,7 +2,9 @@ extends Node2D
 @export var spawn_distance = 700
 var enemy_scenes = [
 	preload("res://scenes/enemy.tscn"),
-	preload("res://scenes/fast_enemy.tscn")
+	preload("res://scenes/fast_enemy.tscn"),
+	preload("res://scenes/tank_enemy.tscn"),
+	
 ]
 
 func _on_timer_timeout() -> void:
