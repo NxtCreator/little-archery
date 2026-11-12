@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://deqbv4613v5s2"]
+
+[ext_resource type="PackedScene" uid="uid://bbpbm7xyctf50" path="res://scenes/enemy.tscn" id="1_hu2wp"]
+
+[node name="Enemy" unique_id=283542043 instance=ExtResource("1_hu2wp")]
+speed = 200
+health = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=330599043]
+modulate = Color(0.16404009, 0.8027955, 1.540184e-06, 1)
