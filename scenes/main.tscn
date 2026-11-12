@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://ccvp3w48yxfam"]
 
+[ext_resource type="Script" uid="uid://uueot4x6nhrv" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bupr48wvnjsw5" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://bbpbm7xyctf50" path="res://scenes/enemy.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D" unique_id=489610076]
+script = ExtResource("1_0wfyh")
 
 [node name="Player" parent="." unique_id=1213636557 instance=ExtResource("1_o5qli")]
 position = Vector2(530, 295)
 
-[node name="Enemy" parent="." unique_id=283542043 instance=ExtResource("2_0wfyh")]
-position = Vector2(115, 123)
+[node name="Timer" type="Timer" parent="." unique_id=693329366]
+wait_time = 2.0
+autostart = true
 
-[node name="Enemy2" parent="." unique_id=1805049531 instance=ExtResource("2_0wfyh")]
-position = Vector2(134, 520)
-
-[node name="Enemy3" parent="." unique_id=1123782148 instance=ExtResource("2_0wfyh")]
-position = Vector2(1043, 108)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
