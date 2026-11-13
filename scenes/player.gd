@@ -2,12 +2,10 @@ extends CharacterBody2D
 @export var speed = 300
 @export var attack_range = 400
 @export var lives = 1
-var coin_count = 0
 var direction = Vector2.ZERO
 
 func count_coins():
-	coin_count += 1
-	print(coin_count)
+	GameData.coins += 1
 
 
 # Called when the node enters the scene tree for the first time.
