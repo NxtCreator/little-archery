@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bsyb2j4y7tua5"]
+
+[ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="1_62kwj"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=530761963]
+custom_minimum_size = Vector2(160, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1368726042]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_62kwj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=658641159]
+layout_mode = 2
+text = "Damage"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2067469990]
+layout_mode = 2
+show_percentage = false
+
+[node name="Button" type="Button" parent="." unique_id=795331681]
+layout_mode = 2
+text = "10"
