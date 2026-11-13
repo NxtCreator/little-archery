@@ -34,8 +34,13 @@ text = "Shop"
 layout_mode = 2
 script = ExtResource("1_lx5au")
 
+[node name="DamageButton" type="Button" parent="VBoxContainer" unique_id=836110526]
+layout_mode = 2
+text = "Damage (5 coins)"
+
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1574995387]
 layout_mode = 2
 text = "Play"
 
+[connection signal="pressed" from="VBoxContainer/DamageButton" to="." method="_on_damage_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
