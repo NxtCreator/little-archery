@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ce5d7n068wdia"]
+
+[ext_resource type="Script" uid="uid://c88f8g786m50g" path="res://scenes/label.gd" id="1_lx5au"]
+[ext_resource type="Script" uid="uid://bymkcuwmo611x" path="res://scenes/shop.gd" id="1_xfvoa"]
+
+[node name="Shop" type="Control" unique_id=1448399944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfvoa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=450684717]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopLabel" type="Label" parent="VBoxContainer" unique_id=1809017312]
+layout_mode = 2
+text = "Shop"
+
+[node name="CoinsLabel" type="Label" parent="VBoxContainer" unique_id=331319071]
+layout_mode = 2
+script = ExtResource("1_lx5au")
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1574995387]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
