@@ -4,7 +4,6 @@ var enemy_scenes = [
 	preload("res://scenes/enemy.tscn"),
 	preload("res://scenes/fast_enemy.tscn"),
 	preload("res://scenes/tank_enemy.tscn"),
-	
 ]
 
 func _on_timer_timeout() -> void:
@@ -17,4 +16,3 @@ func _on_timer_timeout() -> void:
 	var direction = Vector2.from_angle(angle)
 	add_child(enemy)
 	enemy.global_position = player.global_position + direction * spawn_distance
-	
