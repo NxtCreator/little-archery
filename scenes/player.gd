@@ -50,4 +50,4 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		
 		if lives <= 0:
-			get_tree().reload_current_scene.call_deferred()
+			get_tree().change_scene_to_file.call_deferred("res://scenes/shop.tscn")
