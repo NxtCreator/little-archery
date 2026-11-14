@@ -43,6 +43,8 @@ func _physics_process(_delta: float) -> void:
 		var target = get_nearest_enemy(attack_range)
 		if target != null:
 			face(target.global_position - global_position)
+	var margin = Vector2(50, 50)
+	global_position = global_position.clamp(margin, get_viewport_rect().size - margin)
 	
 	
 
