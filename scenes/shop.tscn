@@ -37,8 +37,10 @@ layout_mode = 2
 script = ExtResource("1_lx5au")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1281359225]
-custom_minimum_size = Vector2(400, 350)
+custom_minimum_size = Vector2(400, 430)
 layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1352339597]
 layout_mode = 2

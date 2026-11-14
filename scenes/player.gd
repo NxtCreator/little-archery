@@ -10,7 +10,9 @@ func count_coins():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	lives += GameData.upgrade_levels["health"]
+	speed += 30 * GameData.upgrade_levels["speed"]
+	$Timer.wait_time = max(0.15, 0.5 - 0.05 * GameData.upgrade_levels["reload"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
