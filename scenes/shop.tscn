@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://c88f8g786m50g" path="res://scenes/label.gd" id="1_lx5au"]
 [ext_resource type="Script" uid="uid://bymkcuwmo611x" path="res://scenes/shop.gd" id="1_xfvoa"]
 [ext_resource type="PackedScene" uid="uid://bsyb2j4y7tua5" path="res://scenes/upgrade_card.tscn" id="3_1l46r"]
-[ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="4_032fp"]
+[ext_resource type="Texture2D" uid="uid://d1tqhwg7l4ady" path="res://art/icon_health.png" id="4_ajxib"]
+[ext_resource type="Texture2D" uid="uid://be5mmv452samh" path="res://art/damge_icon.png" id="5_y6sft"]
+[ext_resource type="Texture2D" uid="uid://b7l7fvneufl8b" path="res://art/icon_speed.png" id="6_m4ofw"]
+[ext_resource type="Texture2D" uid="uid://7b31y3isxqnp" path="res://art/icon_reload.png" id="7_heatd"]
 
 [node name="Shop" type="Control" unique_id=1448399944]
 layout_mode = 3
@@ -49,28 +52,28 @@ columns = 2
 [node name="HealthCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Health"
-upgrade_icon = ExtResource("4_032fp")
+upgrade_icon = ExtResource("4_ajxib")
 upgrade_price = 10
 upgrade_id = "health"
 
 [node name="DamageCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=471431918 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Damage"
-upgrade_icon = ExtResource("4_032fp")
+upgrade_icon = ExtResource("5_y6sft")
 upgrade_price = 10
 upgrade_id = "damage"
 
 [node name="SpeedCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=542578279 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Movement speed"
-upgrade_icon = ExtResource("4_032fp")
+upgrade_icon = ExtResource("6_m4ofw")
 upgrade_price = 10
 upgrade_id = "speed"
 
 [node name="ReloadCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=839631765 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Reload time"
-upgrade_icon = ExtResource("4_032fp")
+upgrade_icon = ExtResource("7_heatd")
 upgrade_price = 10
 upgrade_id = "reload"
 

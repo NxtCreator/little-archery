@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ol77e1umbjvg"]
 
 [ext_resource type="Script" uid="uid://cfplbsnc3vtef" path="res://scenes/coin.gd" id="1_i64fm"]
-[ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="1_rwqht"]
+[ext_resource type="Texture2D" uid="uid://bys7mvpjhiii5" path="res://art/icon_coin.png" id="2_i64fm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62jd7"]
 
@@ -10,8 +10,7 @@ script = ExtResource("1_i64fm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=897927563]
 modulate = Color(0.8901961, 0.84705883, 0, 1)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_rwqht")
+texture = ExtResource("2_i64fm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789151842]
 shape = SubResource("CircleShape2D_62jd7")
