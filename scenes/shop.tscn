@@ -8,17 +8,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62jd7"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Gradient" id="Gradient_q2x4p"]
-colors = PackedColorArray(0.078431375, 0.4509804, 0.30980393, 1, 0.15686275, 0.7411765, 0.47058824, 0.99607843)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qktli"]
-gradient = SubResource("Gradient_q2x4p")
-width = 256
-height = 256
-fill_to = Vector2(0, 0.1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62jd7"]
-texture = SubResource("GradientTexture2D_qktli")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_032fp"]
 
 [node name="Shop" type="Control" unique_id=1448399944]
 layout_mode = 3
@@ -62,10 +52,13 @@ vertical_scroll_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_62jd7")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_032fp")
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea" unique_id=1352339597]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
 columns = 2
 
 [node name="HealthCard" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea/GridContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
