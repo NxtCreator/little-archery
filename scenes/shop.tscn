@@ -5,6 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://bsyb2j4y7tua5" path="res://scenes/upgrade_card.tscn" id="3_1l46r"]
 [ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="4_032fp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62jd7"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_q2x4p"]
+colors = PackedColorArray(0.078431375, 0.4509804, 0.30980393, 1, 0.15686275, 0.7411765, 0.47058824, 0.99607843)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qktli"]
+gradient = SubResource("Gradient_q2x4p")
+width = 256
+height = 256
+fill_to = Vector2(0, 0.1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62jd7"]
+texture = SubResource("GradientTexture2D_qktli")
+
 [node name="Shop" type="Control" unique_id=1448399944]
 layout_mode = 3
 anchors_preset = 15
@@ -14,68 +29,75 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xfvoa")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=450684717]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=593076635]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ShopLabel" type="Label" parent="VBoxContainer" unique_id=1809017312]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=186537954]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62jd7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=450684717]
+layout_mode = 2
+
+[node name="ShopLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1809017312]
 layout_mode = 2
 text = "Shop"
 
-[node name="CoinsLabel" type="Label" parent="VBoxContainer" unique_id=331319071]
+[node name="CoinsLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=331319071]
 layout_mode = 2
 script = ExtResource("1_lx5au")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1281359225]
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1281359225]
 custom_minimum_size = Vector2(400, 430)
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1352339597]
+[node name="UpgradeArea" type="PanelContainer" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=1355031775]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_62jd7")
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea" unique_id=1352339597]
 layout_mode = 2
 columns = 2
 
-[node name="HealthCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
+[node name="HealthCard" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea/GridContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Health"
 upgrade_icon = ExtResource("4_032fp")
 upgrade_price = 10
 upgrade_id = "health"
 
-[node name="DamageCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=471431918 instance=ExtResource("3_1l46r")]
+[node name="DamageCard" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea/GridContainer" unique_id=471431918 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Damage"
 upgrade_icon = ExtResource("4_032fp")
 upgrade_price = 10
 upgrade_id = "damage"
 
-[node name="SpeedCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=542578279 instance=ExtResource("3_1l46r")]
+[node name="SpeedCard" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea/GridContainer" unique_id=542578279 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Movement speed"
 upgrade_icon = ExtResource("4_032fp")
 upgrade_price = 10
 upgrade_id = "speed"
 
-[node name="ReloadCard" parent="VBoxContainer/ScrollContainer/GridContainer" unique_id=839631765 instance=ExtResource("3_1l46r")]
+[node name="ReloadCard" parent="CenterContainer/PanelContainer/VBoxContainer/ScrollContainer/UpgradeArea/GridContainer" unique_id=839631765 instance=ExtResource("3_1l46r")]
 layout_mode = 2
 upgrade_name = "Reload time"
 upgrade_icon = ExtResource("4_032fp")
 upgrade_price = 10
 upgrade_id = "reload"
 
-[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1574995387]
+[node name="PlayButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1574995387]
 layout_mode = 2
 text = "Play"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
