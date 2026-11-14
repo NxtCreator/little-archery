@@ -3,30 +3,44 @@
 [ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="1_62kwj"]
 [ext_resource type="Script" uid="uid://cwt1u2m0mf5es" path="res://scenes/upgrade_card.gd" id="1_ew4bf"]
 
+[sub_resource type="Gradient" id="Gradient_ew4bf"]
+colors = PackedColorArray(0.12156863, 0.47843137, 0.32156864, 1, 0.20392157, 0.78039217, 0.48235294, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qktli"]
+gradient = SubResource("Gradient_ew4bf")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62jd7"]
+texture = SubResource("GradientTexture2D_qktli")
+
 [node name="UpgradeCard" type="PanelContainer" unique_id=930133912]
 custom_minimum_size = Vector2(160, 0)
 offset_right = 160.0
 offset_bottom = 198.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_62jd7")
 script = ExtResource("1_ew4bf")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1368726042]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=289461758]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1368726042]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture = ExtResource("1_62kwj")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="." unique_id=658641159]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=658641159]
 layout_mode = 2
 text = "Damage"
 horizontal_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2067469990]
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=2067469990]
 layout_mode = 2
 show_percentage = false
 
-[node name="PurchaseButton" type="Button" parent="." unique_id=795331681]
+[node name="PurchaseButton" type="Button" parent="VBoxContainer" unique_id=795331681]
 layout_mode = 2
 text = "10"
 
-[connection signal="pressed" from="PurchaseButton" to="." method="_on_purchase_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PurchaseButton" to="." method="_on_purchase_button_pressed"]
