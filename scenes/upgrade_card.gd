@@ -15,4 +15,3 @@ func _on_purchase_button_pressed() -> void:
 		return
 	GameData.coins -= upgrade_price
 	GameData.upgrade_levels[upgrade_id] += 1
-	print("Upgrade Level", GameData.upgrade_levels[upgrade_id])

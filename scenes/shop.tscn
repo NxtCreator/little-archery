@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c88f8g786m50g" path="res://scenes/label.gd" id="1_lx5au"]
 [ext_resource type="Script" uid="uid://bymkcuwmo611x" path="res://scenes/shop.gd" id="1_xfvoa"]
 [ext_resource type="PackedScene" uid="uid://bsyb2j4y7tua5" path="res://scenes/upgrade_card.tscn" id="3_1l46r"]
+[ext_resource type="Texture2D" uid="uid://cxtexrrk3vg4p" path="res://icon.svg" id="4_032fp"]
 
 [node name="Shop" type="Control" unique_id=1448399944]
 layout_mode = 3
@@ -35,8 +36,27 @@ text = "Shop"
 layout_mode = 2
 script = ExtResource("1_lx5au")
 
-[node name="VBoxContainer" parent="VBoxContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
+[node name="DamageCard" parent="VBoxContainer" unique_id=530761963 instance=ExtResource("3_1l46r")]
 layout_mode = 2
+upgrade_icon = ExtResource("4_032fp")
+upgrade_price = 5
+upgrade_id = "damage"
+
+[node name="HealthCard" parent="VBoxContainer" unique_id=471431918 instance=ExtResource("3_1l46r")]
+layout_mode = 2
+upgrade_icon = ExtResource("4_032fp")
+upgrade_price = 5
+upgrade_id = "damage"
+
+[node name="SpeedCard" parent="VBoxContainer" unique_id=542578279 instance=ExtResource("3_1l46r")]
+layout_mode = 2
+upgrade_icon = ExtResource("4_032fp")
+upgrade_price = 5
+upgrade_id = "damage"
+
+[node name="ReloadCard" parent="VBoxContainer" unique_id=839631765 instance=ExtResource("3_1l46r")]
+layout_mode = 2
+upgrade_icon = ExtResource("4_032fp")
 upgrade_price = 5
 upgrade_id = "damage"
 
