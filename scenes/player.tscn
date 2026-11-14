@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://ddh6mqk1gqa1f" path="res://art/player.png" id="2_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vdhe"]
-radius = 39.012817
+radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62jd7"]
-radius = 39.01
+radius = 45.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1213636557 groups=["player"]]
 script = ExtResource("1_g2els")
@@ -15,9 +15,9 @@ script = ExtResource("1_g2els")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2053514023]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_g2els")
+offset = Vector2(0, 90)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2054006057]
-position = Vector2(-3, -25)
 shape = SubResource("CircleShape2D_4vdhe")
 
 [node name="Timer" type="Timer" parent="." unique_id=933085397]
@@ -25,7 +25,6 @@ wait_time = 0.5
 autostart = true
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1975904231]
-position = Vector2(-2, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1796695998]
 position = Vector2(-1, 0)
