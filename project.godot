@@ -22,7 +22,6 @@ GameData="*uid://c05ufodtytj6i"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
