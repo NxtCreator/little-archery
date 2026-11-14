@@ -40,7 +40,7 @@ func _on_timer_timeout() -> void:
 		return	
 	var arrow = preload("res://scenes/arrow.tscn").instantiate()
 	arrow.direction = global_position.direction_to(closest_enemy.global_position)
-	arrow.damage = 1 + GameData.damage_level
+	arrow.damage = 1 + GameData.upgrade_levels["damage"]
 	parent.add_child(arrow)
 	arrow.global_position = global_position
 
